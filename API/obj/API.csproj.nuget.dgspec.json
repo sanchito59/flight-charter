@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj": {}
+    "c:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj": {
+    "c:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj",
+        "projectUniqueName": "c:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj",
+        "projectPath": "c:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\obj\\",
+        "outputPath": "c:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -24,7 +24,6 @@
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,9 +42,31 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.12.0, )"
             }
           },
           "imports": [
