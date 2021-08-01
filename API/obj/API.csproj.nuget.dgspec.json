@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj": {}
+    "C:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj": {
+    "C:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "c:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj",
+        "projectPath": "C:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\obj\\",
+        "outputPath": "C:\\Users\\Chris\\Desktop\\projects\\flight-charter\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -24,6 +24,7 @@
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,7 +43,25 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.8, )"
             },
