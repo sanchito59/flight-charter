@@ -15,7 +15,7 @@ namespace API.Data
     {
     }
 
-    // public DbSet<Voyage> Voyages { get; set; }
+    public DbSet<Voyage> Voyages { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
