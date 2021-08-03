@@ -25,7 +25,7 @@ namespace API.Entities
 
     public string HomeAirport { get; set; }
 
-    public string FavoritePlane { get; set; }
+    public Plane FavoritePlane { get; set; }
 
     [Required()]
     public DateTime Created { get; set; } = DateTime.Now;
