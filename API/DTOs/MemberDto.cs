@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using API.Entities;
 
 namespace API.DTOs
 {
@@ -12,6 +13,13 @@ namespace API.DTOs
     public DateTime Created { get; set; }
     public DateTime LastActive { get; set; }
     public string City { get; set; }
+    public string State { get; set; }
     public string Country { get; set; }
+
+    public string HomeAirport { get; set; }
+
+    public Plane FavoritePlane { get; set; }
+
+    public ICollection<VoyageDto> Voyages { get; set; }
   }
 }
