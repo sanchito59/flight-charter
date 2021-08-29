@@ -1,8 +1,5 @@
-using System;
-using System.Linq;
 using API.DTOs;
 using API.Entities;
-using API.Extensions;
 using AutoMapper;
 
 namespace API.Helpers
@@ -12,6 +9,7 @@ namespace API.Helpers
     public AutoMapperProfiles()
     {
       CreateMap<AppUser, MemberDto>();
+      CreateMap<RegisterDto, AppUser>();
     }
   }
 }
