@@ -10,12 +10,6 @@ namespace API.Entities
     public string Username { get; set; }
 
     [Required()]
-    public string FirstName { get; set; }
-
-    [Required()]
-    public string LastName { get; set; }
-
-    [Required()]
     public string PhotoUrl { get; set; }
 
     [Required()]
@@ -26,6 +20,7 @@ namespace API.Entities
     [Required()]
     public string Country { get; set; }
 
+    [Required()]
     public string HomeAirport { get; set; }
 
     public Plane FavoritePlane { get; set; }
@@ -36,7 +31,6 @@ namespace API.Entities
     [Required()]
     public DateTime LastActive { get; set; } = DateTime.Now;
     public ICollection<AppUserRole> UserRoles { get; set; }
-
     public ICollection<Voyage> Voyages { get; set; }
   }
 }

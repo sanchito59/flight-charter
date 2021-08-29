@@ -1,12 +1,13 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Entities
 {
+  [NotMapped]
+  [Keyless]
   public class Plane
   {
-    [Required()]
-    public int Id { get; set; }
-
     [Required()]
     public string Name { get; set; }
     [Required()]

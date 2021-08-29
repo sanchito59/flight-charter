@@ -15,11 +15,8 @@ namespace API.DTOs
     public string City { get; set; }
     public string State { get; set; }
     public string Country { get; set; }
-
     public string HomeAirport { get; set; }
-
     public Plane FavoritePlane { get; set; }
-
     public ICollection<VoyageDto> Voyages { get; set; }
   }
 }

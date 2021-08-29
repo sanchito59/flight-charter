@@ -8,6 +8,7 @@ namespace API.Entities
   [Table("Voyages")]
   public class Voyage
   {
+    [Required()]
     public int Id { get; set; }
 
     [Required()]
@@ -26,5 +27,11 @@ namespace API.Entities
     public ICollection<Flight> Flights { get; set; }
 
     public ICollection<Plane> PlanesUsed { get; set; }
+
+    [Required()]
+    public int AppUserID { get; set; }
+
+    [Required()]
+    public DateTime Created { get; set; } = DateTime.Now;
   }
 }
