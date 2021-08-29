@@ -16,6 +16,9 @@ namespace API.Entities
     public string LastName { get; set; }
 
     [Required()]
+    public string PhotoUrl { get; set; }
+
+    [Required()]
     public string City { get; set; }
 
     public string State { get; set; }
