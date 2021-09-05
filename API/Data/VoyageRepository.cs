@@ -1,20 +1,36 @@
+using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
+using API.Helpers;
 using API.Interfaces;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
 {
   public class VoyageRepository : IVoyageRepository
   {
-    public Task<Voyage> GetVoyageAsync()
+    private readonly DataContext _context;
+    private readonly IMapper _mapper;
+    public VoyageRepository(DataContext context, IMapper mapper)
     {
-      throw new System.NotImplementedException();
+      _context = context;
+      _mapper = mapper;
+    }
+    public async Task<Voyage> GetVoyageAsync(int id)
+    {
+      return await _context.Voyages.FindAsync(id);
     }
 
-    public Task<VoyageDto> GetVoyagesAsync()
+    public async Task<PagedList<VoyageDto>> GetVoyagesAsync(UserParams userParams)
     {
-      throw new System.NotImplementedException();
+      var voyageQuery = _context.Voyages.AsQueryable();
+      voyageQuery = voyageQuery.OrderByDescending(p => p.Created);
+
+      return await PagedList<VoyageDto>.CreateAsync(voyageQuery.ProjectTo<VoyageDto>(_mapper.ConfigurationProvider).AsNoTracking(), userParams.PageNumber, userParams.
+      PageSize);
     }
   }
 }

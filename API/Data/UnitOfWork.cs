@@ -15,6 +15,9 @@ namespace API.Data
     }
 
     public IUserRepository UserRepository => new UserRepository(_context, _mapper);
+
+    public IVoyageRepository VoyageRepository => new VoyageRepository(_context, _mapper);
+
     // public IVoyageRepository VoyageRepository => new VoyageRepository(_context, _mapper);
 
     public async Task<bool> Complete()
