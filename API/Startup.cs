@@ -27,7 +27,7 @@ namespace API
 
       services.AddSwaggerGen(c =>
       {
-        c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+        c.SwaggerDoc("v1", new OpenApiInfo { Title = "Flight Charter", Version = "v1" });
       });
     }
 
@@ -57,7 +57,8 @@ namespace API
       app.UseEndpoints(endpoints =>
       {
         endpoints.MapControllers();
-        endpoints.MapFallbackToController("Index", "Fallback");
+        // TODO: Need to build production bundle once Angular client exists
+        // endpoints.MapFallbackToController("Index", "Fallback");
       });
     }
   }
