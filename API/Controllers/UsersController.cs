@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.DTOs;
+using API.Entities;
+using API.Extensions;
 using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -8,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-  [Authorize] // TODO: Assess if this should be protected
+  [Authorize]
   public class UsersController : BaseApiController
   {
     private readonly IUnitOfWork _unitOfWork;
@@ -33,6 +36,32 @@ namespace API.Controllers
     public async Task<ActionResult<MemberDto>> GetUser(string username)
     {
       return await _unitOfWork.UserRepository.GetMemberAsync(username);
+    }
+
+    [HttpPost("add-voyage")]
+    public async Task<ActionResult<VoyageDto>> AddVoyage(CreateVoyageDto createVoyageDto)
+    {
+      var user = await _unitOfWork.UserRepository.GetUserByUsernameAsync(User.GetUsername());
+
+      var voyage = new Voyage
+      {
+        Title = createVoyageDto.Title,
+        TotalMileage = createVoyageDto.TotalMileage,
+        StartDate = createVoyageDto.StartDate,
+        EndDate = createVoyageDto.EndDate,
+        Flights = createVoyageDto.Flights,
+        PlanesUsed = createVoyageDto.PlanesUsed
+      };
+
+      user.Voyages.Add(voyage);
+
+      if (await _unitOfWork.Complete())
+      {
+        // return CreatedAtRoute("/", new { username = user.UserName }, _mapper.Map<VoyageDto>(voyage)); // TODO: Need Angular client for this
+        return _mapper.Map<VoyageDto>(voyage);
+      }
+
+      return BadRequest("Problem saving voyage");
     }
 
     // PUT user - api/users
